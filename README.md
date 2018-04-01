@@ -49,7 +49,6 @@ main enhancement it offers is the `dated` evironment, which typesets list entrie
 
 This will be typeset as: 
 
-![dated](http://www.sven-lauer.net/files/
-files/academiccv/years.png)
+![dated](http://www.sven-lauer.net/files/files/academiccv/years.png)
 
 
