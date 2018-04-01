@@ -21,7 +21,21 @@ For an example of a pretty-ish CV produced using this package, see
 [example.pdf](example/main.pdf), which is actually my current CV. 
 The source for this is in the [example](example/) directory.
 
-## The main facilities
+## Installation
+
+As usual, simply place `academiccv.sty` some place where TeX can find it
+(the directory where your tex files live will work if all else fails).
+
+Then you can load in the usual way, by starting the preamble
+of your document with:
+```latex
+\documentclass{academiccv}
+```
+
+All package options (except for `enumitemize`) will behave as with the standard
+`article` class, except for the font size options (`academiccv.sty` will always behave as if `12pt` is passed).
+
+## Usage
 
 ### The `dated` evironment
 
@@ -50,5 +64,18 @@ main enhancement it offers is the `dated` evironment, which typesets list entrie
 This will be typeset as: 
 
 ![dated](http://www.sven-lauer.net/files/academiccv/years.png)
+
+### Front matter
+
+`academiccv.sty` redefines `\maketitle` to produce a header suitable for CVs.
+Standardly, it will typeset the name provided via `\author`, followed by the 
+`\date`, followed by a horizontal line. You can override the `\maketitle` 
+command to change this, or simply leave it out and roll your own header.
+
+In addition to this, `academicv` provides the command `\makeinfo`, which 
+typesets information provided via `\contact{ ... }` and `\moreinfo{ ... }`. 
+Usually, this command would be invoked directly after `\maketitle`.
+
+
 
 
