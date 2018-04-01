@@ -1,28 +1,44 @@
 \documentclass{academiccv} 
-\usepackage{local}
-%  
-\usepackage[utf8]{inputenc}
 % 
-\usepackage{eurosym}   
+% I like to squirrel away local configuration in a local.sty file to keep
+% the main latex file uncluttered. local.sty loads the following packages:
+% - lucidamatx.sty (if available) or palatino.sty (fonts)
+% - hyperref.sty
+% - inputenc.sty with the utf8 option (for umlauts, etc.)
+% - eurosym.sty (for the euro currency symbol, \euro)
+%
+\usepackage{local}
+%
+% Likewise, I like to have the "metadata" (title, date, contact info, etc.)
+% in a separate file. 
 %
 \input{meta} 
 %
 \begin{document}  
 	%
-	% Typesets the name and date.
-	%
+	% Typesets the name and date:
 	\maketitle
 	%
-	% Typesets the contact info and additional info.
-	%
+	% Typesets the contact info and additional info:
 	\makeinfo
 	%
+	% The rest of the CV is distributed over various include files:
+	%
 	\input{education}
+	%
 	\input{employment}
+	%
 	\input{grants}
+	%
 	\input{publications}
+	%
 	\input{talks}
+	%
 	\input{teaching}
+	%
 	\input{research}
+	%
 	\input{service}
+	%
+	%\input{references}
 \end{document}

@@ -54,6 +54,7 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 %
 % Creating the `dated` list environment.
+%
 \newlist{dated}{description}{1}
 %
 % Default options. Defined as a config-key in order to make it easier for
@@ -66,6 +67,20 @@
 	itemsep=0.15em,
 }
 \setlist[dated]{dateddefaults}
+%
+% Creating the `undated` list environment.
+%
+\newlist{undated}{itemize}{1}
+%
+% Default options. Defined as a config-key in order to make it easier for
+% users to overwrite individual options.
+%
+\SetEnumitemKey{undateddefaults}{%
+	label={},
+	leftmargin=0in,
+	itemsep=1em,
+}
+\setlist[undated]{undateddefaults}
 %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % titlesec configuration													%

@@ -1,17 +1,22 @@
 %
 % Local configuration for CV.
+%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{local}
 %
-% Font stuff. Will only work of you purchased and installed the Lucida
-% fonts.
-\RequirePackage[lucidasmallscale=true,romanfamily=bright-osf]{lucimatx}
-% If you don't have the lucida fonts, the Palatino font is a decent-looking
-% substitute that should be available "out of the box". Load via:
-%\RequirePackage{palatino}
+% Font stuff. If you have purchased and installed the lucida fonts, it
+% will use those. Otherwise, it loads the Palatino fonts, which are a
+% decent-looking alternative that should be available "out of the box"
+% on most modern LaTeX systems.
 %
+\IfFileExists{lucimatx.sty}{%
+	\RequirePackage[lucidasmallscale=true,romanfamily=bright-osf]{lucimatx}
+}{%
+	\RequirePackage{palatino}
+
+}
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
-% LINK STUFF   																%
+% hyperref setup (for links, urls and pdf properties)						%
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 %
 % First, we need to load the xcolor package ...
@@ -23,9 +28,18 @@
 %
 \definecolors{Blue3}
 %
-% And now, we can load hyperref, and it will use the defined blue color.
-\RequirePackage[bookmarks, colorlinks, breaklinks,urlcolor=Blue3,pdfpagemode={UseOutlines}]{hyperref}
+% And now, we can load hyperref, and tell it to use the defined blue color.
+%
+\RequirePackage[%
+  bookmarks,%
+  colorlinks,%
+  breaklinks,%
+  urlcolor=Blue3,%
+  pdfpagemode={UseOutlines}%
+]{hyperref}
+%
 % We create three commands, for setting the (ASCII-only) pdf title, author and subject.
+%
 \newcommand*{\pdfauthor}[1]{ \gdef\thepdfauthor{#1}}
 \newcommand*{\pdftitle}[1]{  \gdef\thepdftitle{#1}}
 \newcommand*{\pdfsubject}[1]{\gdef\thepdfsubject{#1}}
@@ -35,9 +49,9 @@
 \AtBeginDocument{
 	\hypersetup{pdftitle={\thepdftitle},pdfauthor={\thepdfauthor},pdfsubject={\thepdfsubject}}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Customizing headers/footers										 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Customizing headers/footers										 		%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % Here, we only chage the footer to say "n of m", where n is the 
 % current page number, and m is the max page number.
 \usepackage{lastpage}
@@ -45,7 +59,14 @@
 \pagestyle{fancy}
 % This sets the footer. 
 \cfoot{\thepage\ / \pageref*{LastPage}}
-% This removes the line on the opt of the page.
+% This removes the line on the top of the page.
 \renewcommand{\headrulewidth}{0pt}
 % For some reason, if you to the above, you need to specify:
 \setlength{\headheight}{15pt}
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+% Loading additional packages   									 		%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+%  
+\RequirePackage[utf8]{inputenc}
+% 
+\RequirePackage{eurosym}
