@@ -1,5 +1,5 @@
 %
-% Local configuration for CV and related job application stuff.
+% Local configuration for CV.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{local}
 %
@@ -8,7 +8,7 @@
 \RequirePackage[lucidasmallscale=true,romanfamily=bright-osf]{lucimatx}
 % If you don't have the lucida fonts, the Palatino font is a decent-looking
 % substitute that should be available "out of the box". Load via:
-% \RequirePackage{palatino}
+%\RequirePackage{palatino}
 %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % LINK STUFF   																%
@@ -26,14 +26,14 @@
 % And now, we can load hyperref, and it will use the defined blue color.
 \RequirePackage[bookmarks, colorlinks, breaklinks,urlcolor=Blue3,pdfpagemode={UseOutlines}]{hyperref}
 % We create three commands, for setting the (ASCII-only) pdf title, author and subject.
-\newcommand*{\pdfauthor}[1]{ \gdef\pdfauthor{#1}}
-\newcommand*{\pdftitle}[1]{  \gdef\pdftitle{#1}}
-\newcommand*{\pdfsubject}[1]{\gdef\pdfsubject{#1}}
+\newcommand*{\pdfauthor}[1]{ \gdef\thepdfauthor{#1}}
+\newcommand*{\pdftitle}[1]{  \gdef\thepdftitle{#1}}
+\newcommand*{\pdfsubject}[1]{\gdef\thepdfsubject{#1}}
 \pdfauthor{}
 \pdftitle{\pdfauthor}
 \pdfsubject{}
 \AtBeginDocument{
-	\hypersetup{pdftitle={\pdftitle},pdfauthor={\pdfauthor},pdfsubject={\pdftitle}}
+	\hypersetup{pdftitle={\thepdftitle},pdfauthor={\thepdfauthor},pdfsubject={\thepdfsubject}}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Customizing headers/footers										 %
@@ -49,6 +49,3 @@
 \renewcommand{\headrulewidth}{0pt}
 % For some reason, if you to the above, you need to specify:
 \setlength{\headheight}{15pt}
-%
-
-
