@@ -42,7 +42,7 @@ All package options (except for `enumitemize`) will behave as with the standard
 `academiccv.cls` is a conservative extension of LaTeX's `article` class. The 
 main enhancement it offers is the `dated` evironment, which typesets list entries associated with dates, like this:
 
-```
+```latex
 \begin{dated} 
     \item[2007--2013] 
         \textbf{Ph.D. in Linguistics}, Stanford University, 2013.\\
@@ -76,6 +76,43 @@ In addition to this, `academicv` provides the command `\makeinfo`, which
 typesets information provided via `\contact{ ... }` and `\moreinfo{ ... }`. 
 Usually, this command would be invoked directly after `\maketitle`.
 
+### Setting lists without dates (the `undated` environment)
 
+For some sections of a CV, dating items may no make sense (lists of 
+references, languages spoken, skills, etc.). You can use the standard 
+LaTeX list environments (like `itemize` and `enumerate`) for those, but this
+may not always give the desired result.
 
+If you want the list items to indented in the same way as the dated ones are, 
+you can just use a `dated` list, but leave out the argument of `\item`. 
+If you instead want the list items to be flush with the headings, you can
+instead use the `undated` environment, like so:
+```latex
+%-----------------------------------------------------------------------------%
+\section*{References}
+%-----------------------------------------------------------------------------%
+\begin{undated}
+    \item
+        \textbf{Cleo Condoravdi}\\
+        \textit{Professor}\\
+        Department of Linguistics\\
+        Margaret Jacks Hall, Building 460\\
+        Stanford University \\
+        Stanford, CA 94305-2150\\
+        USA\\
+        \href{mailto:cleoc@stanford.edu}{\texttt{cleoc@stanford.edu}}
+    \item 
+        \textbf{Christopher Potts}\\
+        \textit{Professor}\\
+        Department of Linguistics\\
+        Margaret Jacks Hall, Building 460\\
+        Stanford University \\
+        Stanford, CA 94305-2150\\
+        USA\\
+        \href{mailto:cgpotts@stanford.edu}{\texttt{cgpotts@stanford.edu}}
+\end{undated}
+```
 
+which will be typeset as: 
+
+![dated](http://www.sven-lauer.net/files/academiccv/references.png)
