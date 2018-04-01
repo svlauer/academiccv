@@ -18,5 +18,5 @@ date, plus some convenience commands for creating a nice header, and some
 adjustments for sectioning commands.
 
 For an example of a pretty-ish CV produced using this package, see 
-[example.pdf](example.pdf). The source for this is in the [example](example/)
-directory.
+[example.pdf](example/main.pdf). The source for this is in the [
+example](example/) directory.
