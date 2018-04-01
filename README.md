@@ -18,5 +18,38 @@ date, plus some convenience commands for creating a nice header, and some
 adjustments for sectioning commands.
 
 For an example of a pretty-ish CV produced using this package, see 
-[example.pdf](example/main.pdf). The source for this is in the [
-example](example/) directory.
+[example.pdf](example/main.pdf), which is actually my current CV. 
+The source for this is in the [example](example/) directory.
+
+## The main facilities
+
+### The `dated` evironment
+
+`academiccv.cls` is a conservative extension of LaTeX's `article` class. The 
+main enhancement it offers is the `dated` evironment, which typesets list entries associated with dates, like this:
+
+```
+\begin{dated} 
+    \item[2007--2013] 
+        \textbf{Ph.D. in Linguistics}, Stanford University, 2013.\\
+        Dissertation: \href{http://sven-lauer.net/output/Lauer-Dissertation-DynamicPragmatics.pdf}{\textbf{Towards a dynamic pragmatics}}\\
+        Committee: Cleo Condoravdi, Christopher Potts (co-chairs), Paul Kiparsky.
+    \item[2005--2007]
+        Universiteit van Amsterdam\\
+        Institute for Logic, Language and Computation (ILLC)\\
+        M.Sc. student in Logic
+    \item[2001--2005] 
+        \textbf{B.Sc. in Cognitive Science} with distinction, {Universit\"at Osnabr\"uck}, 2005. 
+    \item[2003-2004]
+        University of Edinburgh\\
+        School of Informatics\\
+        Visiting undergraduate 
+\end{dated}
+```
+
+This will be typeset as: 
+
+![dated](http://www.sven-lauer.net/files/
+files/academiccv/years.png)
+
+
