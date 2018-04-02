@@ -2,7 +2,8 @@
 
 LaTeX has a number of class/style files for typesetting CVs and resumes. None
 of them is aesthetically pleasing and suited to an academic CV, which should be
-somber and clean, yet visually appealing, and suited for quick browsing.
+somber and clean, yet visually appealing, and suited for quick skimming. In 
+addition, the available packages all require rather exotic source code syntax.
 
 For years, I used to roll my own hacked-together style file, which did not make
 for the most pretty source code, but gave a nice result. Things might have 
@@ -37,9 +38,9 @@ All package options (except for `enumitemize`) will behave as with the standard
 
 ## Dependencies
 
-- `enumitem.sty` (provides the list environments)
-- `titlesec.sty` (adjusts section titles)
-- `geometry.sty` (for adjusting margins)
+- [`enumitem.sty`](https://ctan.org/pkg/enumitem?lang=en) (provides the list environments)
+- [`titlesec.sty`](https://ctan.org/pkg/titlesec?lang=en) (for adjusting section titles)
+- [`geometry.sty`](https://ctan.org/pkg/geometry?lang=en) (for adjusting margins)
 
 All three of these should be provided with virtually all recent-ish LaTeX-installations.
 
@@ -143,6 +144,12 @@ All other options are passed through to `article` unchanged. However, the
 **font size options will have no effect** (`academiccv` will always behave as
 if the `12pt` option had been passed). If you really want to change the basic
 font size, you will have to do it by other means.
+
+(I do advise against font sizes smaller than 12pt for CVs, which are made to be skimmed. This becomes difficult on smaller font sizes. This is why I 
+hardwired 12pt as the font size (I would have preferred to have 12pt as a
+default that can be overriden, but this does not seem to be possible). For the
+same reason, I advise strongly against smaller margins than the 1 inch 
+default).
 
 ### (Sub)section titles
 
