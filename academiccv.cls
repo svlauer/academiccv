@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}
 %
 \ProvidesClass{academiccv}%
-	[2018/04/04 A clean, simple academic cv v.0.9.0]
+	[2018/04/15 A clean, simple academic cv v.1.0.0]
 %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % PACKAGE OPTIONS 															%
